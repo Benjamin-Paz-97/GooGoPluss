@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GooGoPluss.Vistas.Reutilizables.ListaDirecciones">
+    <Grid BackgroundColor="white"
+          Padding="20"
+          >
+        <ScrollView>
+            <StackLayout>
+                <StackLayout BindableLayout.ItemsSource="{Binding LISTADIRECCIONES}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Horizontal">
+                                <Frame Padding="5"
+                                       BackgroundColor="#B6B6B6"
+                                       CornerRadius="50"
+                                       VerticalOptions="CenterAndExpand">
+                                    <Image Source="https://i.ibb.co/zPV0Lvn/Fijar-Punto.png"
+                                           HeightRequest="30" />
+                                </Frame>
+                                <StackLayout>
+                                    <Label Text="{Binding StructuredFormatting.MainText}"
+                                           TextColor="Black"
+                                           FontAttributes="Bold"
+                                           FontSize="Subtitle" />
+                                    <Label Text="{Binding StructuredFormatting.SecondaryText}"
+                                           TextColor="Gray" />
+                                </StackLayout>
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Frame Padding="5"
+                           BackgroundColor="#B6B6B6"
+                           CornerRadius="50"
+                           VerticalOptions="CenterAndExpand">
+                        <Image Source="https://i.ibb.co/zPV0Lvn/Fijar-Punto.png"
+                               HeightRequest="30" />
+                    </Frame>
+                    <Label Text="Fija la ubicacion en el mapa"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           FontSize="Subtitle" 
+                           VerticalOptions="Center"/>
+                </StackLayout>
+            </StackLayout>
+            
+        </ScrollView>        
+    </Grid>
+</ContentView>

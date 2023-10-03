@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GooGoPluss.Vistas.Registro.Regstro">
+    <AbsoluteLayout>
+        <!-- Imagen de fondo -->
+        <Image Source="https://i.ibb.co/XX7tLBL/Registro.png"
+               Aspect="AspectFill"
+               AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds="0,0,1,1" />
+        <!-- Contenido de la página -->
+        <StackLayout AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     Padding="20"
+                     Spacing="10">
+            <!-- Aquí puedes agregar los elementos de tu página -->
+            <Label Text="REGISTRO"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalTextAlignment="Center" />
+            <Label Text="Confirma tu informacion"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalTextAlignment="Start" />
+            <Label Text="DNI"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalTextAlignment="Start" />
+            <Frame BackgroundColor="#EEEEEE"
+                   HasShadow="false"
+                   CornerRadius="10"
+                   Padding="5">
+                <Entry Placeholder="Documento Nacional de Identidad"
+                       BackgroundColor="#EEEEEE" />
+            </Frame>
+            <Label Text="Telefono"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalTextAlignment="Start" />
+            <Frame BackgroundColor="#EEEEEE"
+                   HasShadow="false"
+                   CornerRadius="10"
+                   Padding="5">
+                <Entry Placeholder="Telefono"
+                       BackgroundColor="#EEEEEE" />
+            </Frame>
+            <Frame HasShadow="False"
+                   BackgroundColor="#EEEEEE"
+                   CornerRadius="10"
+                   Padding="15"
+                   VerticalOptions="EndAndExpand">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="https://i.ibb.co/PCgTqM4/Google.png"
+                           HeightRequest="25" />
+                    <Label Text="Continuar con Google"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="Center"
+                           FontAttributes="Bold"
+                           TextColor="Black" />
+                </StackLayout>
+            </Frame>
+            <Label Text="Si continuas es posible que recibas un correo para verificar la cuenta. Se pueden aplicar costos de mensajes y datos."
+                   TextColor="Gray"
+                   HorizontalTextAlignment="Center"
+                   VerticalOptions="End" />
+        </StackLayout>
+    </AbsoluteLayout>
+</ContentPage>

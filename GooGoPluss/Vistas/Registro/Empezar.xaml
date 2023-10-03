@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:GooGoPluss.Modelo"
+             x:Class="GooGoPluss.Vistas.Registro.Empezar"
+             NavigationPage.HasNavigationBar="False">
+    <AbsoluteLayout>
+        <!-- Imagen de fondo -->
+        <Image Source="https://i.ibb.co/6JkB5Qq/Bienvenida-Go-Go.png"
+               Aspect="AspectFill"
+               AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds="0,0,1,1" />
+        <!-- Contenido de la página -->
+        <StackLayout AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <!-- Aquí puedes agregar los elementos de tu página -->
+            <StackLayout VerticalOptions="EndAndExpand"
+                         Spacing="0">
+                <Label Text="BIENVENIDO A "
+                       VerticalOptions="EndAndExpand"
+                       FontSize="28"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Start"
+                       TextColor="White"
+                       Margin="30,0,0,0" />
+                <Label Text="GoGo"
+                       FontSize="120"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Start"
+                       Margin="30,0,0,0">
+                    <Label.Effects>
+                        <local:GradientTextEffect StartColor="#000000"
+                                                  EndColor="#999999" />
+                    </Label.Effects>
+                </Label>
+                <Label Text="¡La mejor aplicacion de reservas de taxis para hacer tu dia excelente! "
+                       FontSize="22"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Start"
+                       TextColor="White"
+                       Margin="30,0,0,0" />
+            </StackLayout>
+            <Grid>
+                <Button Text="EMPEZAR"
+                        TextColor="White"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        TextTransform="None"
+                        Margin="20,0,20,20"
+                        CornerRadius="10"
+                        Command="{Binding IrCrearCuentaComand}">
+                    <Button.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Offset="0.5"
+                                          Color="#232965" />
+                            <!-- Color en la mitad del botón -->
+                            <GradientStop Offset="1"
+                                          Color="#482F5E" />
+                            <!-- Color en la parte derecha del botón -->
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Image Source="https://i.ibb.co/BnFmFWx/Flecha-Derecha.png"
+                       HeightRequest="40"
+                       HorizontalOptions="End"
+                       Margin="0,0,40,20" />
+            </Grid>
+        </StackLayout>
+    </AbsoluteLayout>
+</ContentPage>

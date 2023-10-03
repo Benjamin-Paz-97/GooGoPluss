@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             x:Class="GooGoPluss.Vistas.MenuPrincipal.VmenuPrincipal"
+             xmlns:tollkit="http://xamarin.com/schemas/2020/toolkit">
+    <ContentPage.Behaviors>
+        <tollkit:EventToCommandBehavior EventName="Appearing"
+                                        Command="{Binding ValidarCommand}"/>
+    </ContentPage.Behaviors>
+    <StackLayout BackgroundColor="#1E1B33"
+                 Padding="20"
+                 Spacing="25">
+        <Grid ColumnDefinitions="50,*,50">
+            <Image Source="https://i.ibb.co/svntCrr/perfil.png"
+                   HeightRequest="40"
+                   Grid.Column="0"
+                   HorizontalOptions="StartAndExpand"/>
+            <Label Text="Gregorio Benjamin Paz Flores"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   Grid.Column="1"
+                   VerticalTextAlignment="End"/>              
+            <Image Source="https://i.ibb.co/d4k4WYT/Noti-Blancapng.png"
+                   HeightRequest="30" 
+                   Grid.Column="2"
+                   HorizontalOptions="EndAndExpand"/>
+        </Grid>
+        <AbsoluteLayout HeightRequest="150" >
+            <Image Source="https://i.ibb.co/Y2M36zn/persona-celular.jpg"
+                   Aspect="AspectFill"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1"
+                   />
+            <StackLayout AbsoluteLayout.LayoutFlags="All"
+                         AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <Grid ColumnDefinitions="*,*"
+                      RowDefinitions="60,*,*">
+                    <Label Grid.Row="0"
+                           Text="''Haz tu vida mucho mas facil.&quot;"
+                           FontAttributes="Italic,Bold"
+                           FontSize="20"
+                           TextColor="Black"
+                           Margin="10,0,0,0"/>
+                    <Label Grid.Row="2"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="2"
+                           Text="''Tu destino, nuestra misión: Viajes seguros y cómodos al alcance de tu mano.&quot;"
+                           FontAttributes="Italic"
+                           FontSize="16"
+                           TextColor="Black"
+                           Margin="10,0,0,0" />
+                </Grid>
+            </StackLayout>
+        </AbsoluteLayout>
+        <Frame BackgroundColor="#EDEDED"
+               CornerRadius="10"
+               HasShadow="false"
+               Padding="15,10">
+            <Label Text="¿A dónde vamos?"
+                   FontSize="Large"
+                   TextColor="Black"/>
+        </Frame>
+        <StackLayout Orientation="Horizontal">
+            <Frame BackgroundColor="#EEEEEE"
+                   VerticalOptions="Center"
+                   CornerRadius="30"
+                   Padding="10">
+                <Image Source="https://i.ibb.co/qkW0M8c/Estrella.png"
+                       HeightRequest="15"/>
+            </Frame>
+            <Label Text="Elegir un favorito"
+                   VerticalOptions="Center"
+                   FontSize="Subtitle"
+                   FontAttributes="Bold"
+                   TextColor="White"/>
+            <Image Source="https://i.ibb.co/Qjfmvzy/Fecha-Corecta-blanca.png"
+                   HeightRequest="20"
+                   HorizontalOptions="EndAndExpand"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Frame BackgroundColor="#EEEEEE"
+                   VerticalOptions="Center"
+                   CornerRadius="30"
+                   Padding="10">
+                <Image Source="https://i.ibb.co/tZsqK7k/ubicacion.png"
+                       HeightRequest="15" />
+            </Frame>
+            <Label Text="Estblecer destino en el mapa"
+                   VerticalOptions="Center"
+                   FontSize="Subtitle"
+                   FontAttributes="Bold"
+                   TextColor="White" />
+            <Image Source="https://i.ibb.co/Qjfmvzy/Fecha-Corecta-blanca.png"
+                   HeightRequest="20"
+                   HorizontalOptions="EndAndExpand" />
+        </StackLayout>
+        <Label Text="A tu alrededor" 
+               FontSize="Medium"
+               TextColor="White"/>
+        <Frame VerticalOptions="FillAndExpand"
+               CornerRadius="20"
+               HasShadow="False"
+               Padding="0"
+               >
+            <maps:Map />
+        </Frame>
+    </StackLayout>
+</ContentPage>

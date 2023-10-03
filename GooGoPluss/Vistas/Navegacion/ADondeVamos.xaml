@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GooGoPluss.Vistas.Navegacion.ADondeVamos"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:sombras="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             xmlns:reutilizables="clr-namespace:GooGoPluss.Vistas.Reutilizables"
+             xmlns:toolkit="http://xamarin.com/schemas/2020/toolkit">
+    <Grid>
+        <Grid RowDefinitions="auto,*">
+            <sombras:Shadows CornerRadius="10"
+                             Shades="{sombras:SingleShade Offset='0,5',Opacity=0.39,Color=Gray,BlurRadius=10}">
+                <StackLayout Padding="20,5"
+                             BackgroundColor="White">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="https://i.ibb.co/D9HXwCS/Flecha-izquierda.png"
+                           HeightRequest="30"
+                           HorizontalOptions="Start" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                            <Frame CornerRadius="50"
+                                   VerticalOptions="Center"
+                                   Padding="3"
+                                   HasShadow="False">
+                                <Frame.Background>
+                                    <RadialGradientBrush>
+                                        <GradientStop Color="white"
+                                                      Offset="0.1"/>
+                                        <GradientStop Color="white"
+                                                      Offset="0.1" />
+                                        <GradientStop Color="white"
+                                                      Offset="0.1" />
+                                        <GradientStop Color="#E9E9E9"
+                                                      Offset="0.1" />
+                                        <GradientStop Color="LightGray"
+                                                      Offset="1.0" />
+                                    </RadialGradientBrush>
+                                </Frame.Background>
+                                <Image Source="https://i.ibb.co/svntCrr/perfil.png" 
+                                       HeightRequest="20"
+                                       Margin="4"/>
+                            </Frame>
+                            <Label Text="Para Mí"
+                                   VerticalOptions="Center"
+                                   TextColor="Black"/>
+                            <Image Source="https://i.ibb.co/3sHGn9Y/Flecha-Abajo.png" 
+                                   HeightRequest="15"/>
+                        </StackLayout>
+                   
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout VerticalOptions="Center"
+                                     Margin="0,0,12,0">
+                            <BoxView BackgroundColor="Black"
+                                     HeightRequest="6"
+                                     WidthRequest="6"
+                                     CornerRadius="10"
+                                     HorizontalOptions="Center" />
+                            <Line HeightRequest="50"
+                                  BackgroundColor="#AFAFAF"
+                                  WidthRequest="2"
+                                  HorizontalOptions="Center"
+                                  Margin="0,-5" />
+                            <BoxView BackgroundColor="Black"
+                                     HeightRequest="6"
+                                     WidthRequest="6"
+                                     CornerRadius="10"
+                                     HorizontalOptions="Center" />
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <Frame BackgroundColor="#F9F9F9"
+                                   HasShadow="False"
+                                   Padding="2,1"
+                                   CornerRadius="5">
+                                <SearchBar FontSize="Subtitle"
+                                           TextColor="Black"
+                                           TranslationX="-45"
+                                           x:Name="txtOrigen"
+                                           Text="{Binding TXTORIGEN,Mode=TwoWay}"
+                                           >
+                                    <SearchBar.Behaviors>
+                                        <toolkit:EventToCommandBehavior EventName="TextChanged"
+                                                                        Command="{Binding buscarcommand}"/>
+                                    </SearchBar.Behaviors>
+                                </SearchBar>
+                            </Frame>
+                            <Frame BackgroundColor="#F9F9F9"
+                                   HasShadow="False"
+                                   Padding="2,1"
+                                   CornerRadius="5">
+                                <SearchBar FontSize="Subtitle"
+                                           TextColor="Black"
+                                           TranslationX="-45"
+                                           Placeholder="¿A donde vámos?"
+                                           PlaceholderColor="#A3A3AB" 
+                                           x:Name="txtDestino"/>
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>   
+            </sombras:Shadows>
+            <Frame Grid.Row="1"
+                   Padding="0"
+                   Margin="20,10"
+                   HasShadow="False"
+                   CornerRadius="20">
+                <maps:Map />
+            </Frame>
+            <Button Text="Listo" 
+                    BackgroundColor="Black"
+                    Grid.Row="1"
+                    VerticalOptions="End"
+                    TextColor="White"
+                    HorizontalOptions="Start" 
+                    WidthRequest="180"
+                    CornerRadius="10"
+                    Margin="30"
+                    FontAttributes="Bold"
+                    HeightRequest="50"/>
+            <reutilizables:ListaDirecciones Grid.Row="1"/>
+        </Grid>
+    </Grid>
+</ContentPage>

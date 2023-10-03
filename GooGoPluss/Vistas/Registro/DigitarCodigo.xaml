@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:material="clr-namespace:Plugin.MaterialDesignControls;assembly=Plugin.MaterialDesignControls"
+             x:Class="GooGoPluss.Vistas.Registro.DigitarCodigo">
+    <AbsoluteLayout>
+        <!-- Imagen de fondo -->
+        <Image Source="https://i.ibb.co/KjVPp9H/Codigo-de-verificacion.png"
+               Aspect="AspectFill"
+               AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds="0,0,1,1" />
+        <!-- Contenido de la página -->
+        <StackLayout AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <!-- Aquí puedes agregar los elementos de tu página -->
+            <StackLayout Padding="20"
+                         Spacing="20">
+                <Label Text="Ingresa el codigo de 4 digitos quee se te envio al 951907810"
+                       FontSize="Medium"
+                       TextColor="Black" />
+                <Grid ColumnDefinitions="*,*">
+                    <material:MaterialCodeEntry Length="4"
+                                                Keyboard="Numeric"
+                                                FontSize="20"
+                                                BackgroundColor="#F6F6F6"
+                                                BorderColor="#F6F6F6"
+                                                Text="{Binding TXTCODIGO}"
+                                                />
+                </Grid>
+                <Frame CornerRadius="30"
+                       Padding="0"
+                       HorizontalOptions="Start"
+                       HasShadow="false"
+                       BackgroundColor="Transparent">
+                    <Label Text="No recibí el codigo 0:30"
+                           FontAttributes="Bold" />
+                </Frame>
+            </StackLayout> 
+            <StackLayout Orientation="Horizontal"
+                        VerticalOptions="EndAndExpand"
+                         Margin="20,0,20,10">
+                <Frame BackgroundColor="#EEEEEE"
+                       HasShadow="False"
+                       CornerRadius="35"
+                       VerticalOptions="Center">
+                    <Image Source="https://i.ibb.co/D9HXwCS/Flecha-izquierda.png"
+                           HeightRequest="30" />
+                </Frame>
+                <Frame HorizontalOptions="EndAndExpand"
+                           Margin="0,20"
+                           BackgroundColor="Black"
+                           CornerRadius="30"
+                           Padding="15">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Siguiente"
+                                   BackgroundColor="Black"
+                                   TextColor="White"
+                                   FontSize="20"
+                                   FontAttributes="Bold"
+                                   TextTransform="None"
+                                   VerticalOptions="Center" />
+                            <Image Source="https://i.ibb.co/SQX8Hny/Flecha-Blanca.png"
+                                   HeightRequest="15"
+                                   HorizontalOptions="End"
+                                   Margin="0,0,18,0" />
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Validarcommand}"/>
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+        </StackLayout>
+    </AbsoluteLayout>
+</ContentPage>
